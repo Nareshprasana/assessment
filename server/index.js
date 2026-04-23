@@ -34,7 +34,7 @@ async function getDashboardPayload() {
   return { employees, reviews, assignments };
 }
 
-// --- ADMIN ROUTES ---
+// ADMIN ROUTES
 
 app.get('/api/admin/employees', asyncHandler(async (req, res) => {
   const users = await User.find().sort({ role: 1, name: 1 });
@@ -174,7 +174,7 @@ app.post('/api/admin/assign-review', asyncHandler(async (req, res) => {
   res.status(201).json({ review, assignment });
 }));
 
-// --- EMPLOYEE ROUTES ---
+// EMPLOYEE ROUTES
 
 app.get('/api/employee/tasks/:userId', asyncHandler(async (req, res) => {
   const tasks = await FeedbackRequest.find({ reviewerId: req.params.userId })

@@ -3,7 +3,6 @@ const { User, PerformanceReview, FeedbackRequest } = require('./db');
 
 async function seed() {
   try {
-    // Clear existing data
     await User.deleteMany({});
     await PerformanceReview.deleteMany({});
     await FeedbackRequest.deleteMany({});

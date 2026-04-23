@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Connect to local MongoDB (adjust URI if needed)
+// Database connection
 mongoose.connect('mongodb://localhost:27017/sampledb')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Connection error', err));
@@ -12,13 +12,13 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ['ADMIN', 'EMPLOYEE'], default: 'EMPLOYEE' }
 }, { timestamps: true });
 
-// 2. Performance Review Schema (The "Subject" of the review)
+// 2. Performance Review Schema
 const reviewSchema = new mongoose.Schema({
   title: { type: String, required: true },
   subjectId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 }, { timestamps: true });
 
-// 3. Feedback Request Schema (The "Task" for reviewers)
+// 3. Feedback Request Schema
 const feedbackSchema = new mongoose.Schema({
   reviewId: { type: mongoose.Schema.Types.ObjectId, ref: 'PerformanceReview', required: true },
   reviewerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
