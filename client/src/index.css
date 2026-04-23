@@ -1,16 +1,16 @@
- :root {
-  --bg: #efe3d2;
-  --bg-deep: #e2d0bb;
-  --panel: rgba(255, 250, 244, 0.86);
-  --ink: #5f4936;
-  --ink-strong: #2b1d11;
-  --muted: #7f6a57;
-  --accent: #b35c24;
-  --accent-deep: #8d4217;
-  --border: rgba(102, 77, 54, 0.14);
-  --shadow-soft: 0 24px 60px rgba(77, 51, 25, 0.14);
-  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-body: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+:root {
+  --bg-top: #f7f8f5;
+  --bg-bottom: #dde7e3;
+  --panel: rgba(248, 251, 249, 0.82);
+  --ink: #426168;
+  --ink-strong: #122126;
+  --muted: #5f7c82;
+  --accent-strong: #e3622b;
+  --teal-strong: #0b6976;
+  --border: rgba(22, 71, 78, 0.12);
+  --shadow-soft: 0 24px 60px rgba(17, 42, 46, 0.12);
+  --font-display: "Georgia", "Palatino Linotype", "Book Antiqua", serif;
+  --font-body: "Segoe UI", "Aptos", "Trebuchet MS", sans-serif;
 }
 
 * {
@@ -28,9 +28,9 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(255, 243, 224, 0.95), transparent 24%),
-    radial-gradient(circle at 85% 12%, rgba(214, 162, 113, 0.32), transparent 18%),
-    linear-gradient(180deg, var(--bg), var(--bg-deep));
+    radial-gradient(circle at 12% 12%, rgba(255, 143, 70, 0.16), transparent 18%),
+    radial-gradient(circle at 88% 8%, rgba(53, 168, 181, 0.18), transparent 18%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
   background-attachment: fixed;
 }
 
@@ -39,12 +39,12 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.32;
+  opacity: 0.24;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(circle at center, black 38%, transparent 92%);
+    linear-gradient(rgba(9, 81, 88, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(9, 81, 88, 0.05) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
 }
 
 a {
